@@ -1,9 +1,74 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>home</ion-title>
+  <ion-toolbar class="ion-padding-top">
+    <ion-title>Home</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content >
+  <ion-grid >
+    <ion-row class="ion-padding ion-align-items-center" >
+      <ion-col size="4" class="ion-align-items-center" *ngFor=" let product of products"> 
+        <ion-card>
+          <ion-card-header>
+            <!--<ion-card-subtitle>{{product.subTitle}}</ion-card-subtitle> -->
+            <ion-card-title>{{product.title}}</ion-card-title>
+          </ion-card-header>
+          
+          <ion-card-content>
+            <div class="imgContainer" >
+              <img alt="Imagen Producto" src="../../../assets/img/imagenPrueba.jpg" class="imgData" />
+            </div>
+            {{product.desc}}
+          </ion-card-content>
+          <div> 
+            <ion-tab-button tab="schedule">
+              <ion-icon name="eye"></ion-icon>
+              <ion-label>See more</ion-label>
+            </ion-tab-button>
+          </div>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
+
+
+<!--
+  <ion-col size="4"> 
+        <ion-card>
+          <ion-card-header>
+            <ion-card-subtitle>Card test 2</ion-card-subtitle>
+            <ion-card-title>Producto 2</ion-card-title>
+          </ion-card-header>
+
+          <ion-card-content>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum, aspernatur quos placeat sint repellendus laborum molestiae iste vero consequuntur! Ipsam sint expedita in quo, sit error nulla odit culpa repellendus.
+          </ion-card-content>
+          <div> 
+            <ion-tab-button tab="schedule">
+              <ion-icon name="eye"></ion-icon>
+              <ion-label>See more</ion-label>
+            </ion-tab-button>
+          </div>
+        </ion-card>
+      </ion-col>
+      <ion-col size="4"> 
+        <ion-card>
+          <ion-card-header>
+            <ion-card-subtitle>Card test 3</ion-card-subtitle>
+            <ion-card-title>Producto 3</ion-card-title>
+          </ion-card-header>
+
+          <ion-card-content>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum, aspernatur quos placeat sint repellendus laborum molestiae iste vero consequuntur! Ipsam sint expedita in quo, sit error nulla odit culpa repellendus.
+          </ion-card-content>
+
+          <div> 
+            <ion-tab-button tab="schedule">
+              <ion-icon name="eye"></ion-icon>
+              <ion-label>See more</ion-label>
+            </ion-tab-button>
+          </div>
+        </ion-card>
+      </ion-col>
+-->
