@@ -1,0 +1,22 @@
+ion-col {
+    ion-card {
+        height: 250px;
+        ion-card-header {
+            ion-card-subtitle {
+                color: #007AE9;
+            }
+        }
+        ion-card-content {
+            text-align: left;
+        }
+        button {
+            margin-top: 15px;
+            margin-left: 65px;
+            width: 80px;
+            height: 25px;
+            background-color: #2ECC71;
+            color: #FFF;
+            
+        }
+    }
+}
