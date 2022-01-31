@@ -7,6 +7,39 @@
 <ion-content>
   <ion-grid>
     <ion-row>
+      <ion-col size="4" *ngFor="let products of dataProducts">
+        <ion-card class="cardContent">
+          <ion-card-header>
+            <div>
+              <div>
+                <img src="\assets\img\Xbox.jpg">
+              </div>
+              <div class="titleContent" title="{{products.title}}">
+                <ion-card-title>{{ getTitle(products.title) }}</ion-card-title>
+              </div>
+            </div>
+          </ion-card-header>
+            <ion-card-content class="contentInfo">
+              <div class="priceInfo">
+                <p>Precio: </p>
+                <span>{{ products.price | currency }}</span>
+              </div>
+              <div class="buttonsInfo">
+                <button class="view">View</button>
+                <button class="add">Add To Cart</button>
+              </div>
+            </ion-card-content> 
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+
+<!--
+  <ion-content>
+  <ion-grid>
+    <ion-row>
       <ion-col size="3" *ngFor="let products of dataProducts">
         <ion-card>
           <ion-card-header>
@@ -26,3 +59,5 @@
     </ion-row>
   </ion-grid>
 </ion-content>
+
+-->
