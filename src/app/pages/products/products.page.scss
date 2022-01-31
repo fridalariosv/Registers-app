@@ -1,13 +1,11 @@
 ion-col {
     ion-card {
-        height: 250px;
+        border-radius: 5px;
+        height: 280px;
         ion-card-header {
             ion-card-subtitle {
                 color: #007AE9;
             }
-        }
-        ion-card-content {
-            text-align: left;
         }
         button {
             margin-top: 15px;

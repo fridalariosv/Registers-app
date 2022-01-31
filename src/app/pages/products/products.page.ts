@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { products } from '../../data/products';
+
 @Component({
   selector: 'app-products',
   templateUrl: './products.page.html',
@@ -14,7 +15,7 @@ export class ProductsPage implements OnInit {
 
   ngOnInit() {
     console.log(this.dataProducts)
-   this.dataProducts
+    this.dataProducts
   }
 
   getDescription(value:string) {

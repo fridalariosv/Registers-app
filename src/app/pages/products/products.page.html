@@ -10,17 +10,16 @@
       <ion-col size="3" *ngFor="let products of dataProducts">
         <ion-card>
           <ion-card-header>
-            <ion-card-subtitle>Tecnologia</ion-card-subtitle>
+            <img src="\assets\img\Xbox.jpg">
             <span title="{{products.title}}">
               <ion-card-title>{{ getTitle(products.title) }}</ion-card-title>
             </span>
           </ion-card-header>
-
-          <ion-card-content>
-            <span title="{{products.description}}">
-              {{ getDescription(products.description)}}
-            </span>
-          </ion-card-content>
+          <div class="price">
+            <ion-card-content>
+              {{products.price | currency }}
+            </ion-card-content> 
+          </div>
           <button>View</button>
         </ion-card>
       </ion-col>
