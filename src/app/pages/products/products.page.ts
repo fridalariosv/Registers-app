@@ -18,13 +18,8 @@ export class ProductsPage implements OnInit {
     this.dataProducts
   }
 
-  getDescription(value:string) {
-    if(typeof value == "string" && value.length>80) value = value.substring(0, 80) + "..."
-    return value
-  }
-
   getTitle(value:string) {
-    if(typeof value == "string" && value.length>24) value = value.substring(0, 24) + "..."
+    if(typeof value == "string" && value.length>30) value = value.substring(0, 30) + "..."
     return value
   }
 

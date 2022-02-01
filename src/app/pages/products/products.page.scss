@@ -1,35 +1,10 @@
-
-/*ion-col {
-    ion-card {
-        border-radius: 5px;
-        height: 280px;
-        ion-card-header {
-            ion-card-subtitle {
-                color: #007AE9;
-            }
-        }
-        button {
-            margin-top: 15px;
-            margin-left: 65px;
-            width: 80px;
-            height: 25px;
-            background-color: #2ECC71;
-            color: #FFF;
-            
-        }
-    }
-}
-*/
-
 // Changes to make the cards look better
 
 .cardContent{ // Clase de contenedor principal
     padding: 1rem 0.2rem; // separacion 1 rem arriba y abajo 0.2 derecha izquierda
-    background-color: blueviolet;
 }
 
 .titleContent{
-    background-color: brown;
     padding: 0.5rem;
     display: flex;
     flex-direction: row;
@@ -37,49 +12,40 @@
     margin-top: 5px;
 }
 
-.contentInfo{
-    background-color: coral;
-}
-
 .priceInfo{
-    background-color: green;
     display: flex;
     padding: 0.6rem 0;
     flex-direction: row;
     align-items: center;
 
-    p{
-        font-size: 18px;
-        font-weight: bold;
-    }
     span{
-        font-size: 15px;
+        font-size: 18px;
     }
 }
 
 .buttonsInfo{
-    background-color: grey;
     display: flex;
     flex-direction: row;
     margin-top: 10px;
-    justify-content: space-between;
+    justify-content: center;
     width: auto;
-    //padding: 1rem 0;
     gap: 1rem;
 }
 
 .view {
-    width: 50%;
+    width: 100%;
     padding: 1rem 0;
-    border-radius: 0.5rem;
-    background-color: blue;
+    border-radius: 5px;
     text-transform: uppercase;
+    background-color: #F8593B;
+    color: #FFF;
 }
 
 .add{
     width: 50%;
     padding: 1rem 0;
     border-radius: 0.5rem;
-    background-color: green;
     text-transform: uppercase;
+    background-color: #2ECC71;
+    color: #FFF;
 }
