@@ -15,10 +15,13 @@ export class ProductsPage implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    //console.log(this.products)
     this.productSvc
     .getProducts()
     .pipe(tap((products: Product[]) => (this.products = products)))
+    //.pipe(tap((products: Product[]) => (console.log(products, 'Data from products.ts'))))
     .subscribe();
+    console.log(this.products, 'desde productos');
   }
 
 
@@ -26,6 +29,4 @@ export class ProductsPage implements OnInit {
     if (typeof value == "string" && value.length > 30) value = value.substring(0, 30) + "..."
     return value
   }
-
-
 }
