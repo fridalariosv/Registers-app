@@ -6,8 +6,8 @@
 
 <ion-content>
   <ion-grid >
-    <ion-row >
-      <ion-col >
+    <ion-row>
+      <ion-col>
         <div class="img-container">
           <img src="\assets\img\red.jpg" />
           <div class="icon">
@@ -19,16 +19,16 @@
         </div>
       </ion-col>
 
-      <ion-col >
+      <ion-col *ngIf="product">
         <div class="text-container">
           <div>
-            <h1 class="text1">{{dataTest.name}}</h1>
-            <h1 class="text2">Item Type / Name</h1>
-            <h2 class="text3">$19.99</h2>
+            <h1 class="text1">Test</h1>
+            <h1 class="text2">{{ product.name }}</h1>
+            <h2 class="text3">{{ product.price | currency }}</h2>
           </div>
           <div class="description">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.minus voluptas porro nemo eligendi pariatur aliquid nostrum mollitia debitis quibusdam, maiores, ipsam laudantium nisi? Ut omnis delectus odit vero?
+              {{ product.description }}
             </p>
           </div>
           <div class="button">

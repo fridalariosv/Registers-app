@@ -1,12 +1,7 @@
 import { Product } from './../products/interfaces/product.interface';
-import { Component, Injectable, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators';
 import { ProductsService } from '../products/services/products.service';
-import { ProductDetailService } from '../products/services/productDetail.service';
-import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-details-products',
@@ -16,17 +11,14 @@ import { tap } from 'rxjs/operators';
 export class DetailsProductsPage implements OnInit {
   products : Product[];
   idProduct: number;
-  product!: any;
+  product: any;
   
   constructor(
-    private navCtrl: NavController,
-    private activatedRoute: ActivatedRoute,
     private productSvc: ProductsService,
-    private route: ActivatedRoute,
-    private http : HttpClient,
+    private route: ActivatedRoute
   ) { }
 
-  setData(data){
+  setData(data): void{
     this.product = data;
     console.log(this.product); // setear la data a product
   }
