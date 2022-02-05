@@ -15,13 +15,13 @@ export class ProductsPage implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    //console.log(this.products)
+    console.log(this.products, 'productos')
     this.productSvc
     .getProducts()
     .pipe(tap((products: Product[]) => (this.products = products)))
     //.pipe(tap((products: Product[]) => (console.log(products, 'Data from products.ts'))))
     .subscribe();
-    console.log(this.products, 'desde productos');
+    //console.log(this.productSvc, 'URL????');
   }
 
 

@@ -1,5 +1,5 @@
 import { Product } from './../products/interfaces/product.interface';
-import { Component, OnInit } from '@angular/core';
+import { Component, Injectable, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
@@ -7,6 +7,7 @@ import { map } from 'rxjs/operators';
 import { ProductsService } from '../products/services/products.service';
 import { ProductDetailService } from '../products/services/productDetail.service';
 import { tap } from 'rxjs/operators';
+
 @Component({
   selector: 'app-details-products',
   templateUrl: './details-products.page.html',
@@ -15,24 +16,45 @@ import { tap } from 'rxjs/operators';
 export class DetailsProductsPage implements OnInit {
   products : Product[];
   idProduct: number;
+  product!: any;
   
-
   constructor(
     private navCtrl: NavController,
     private activatedRoute: ActivatedRoute,
     private productSvc: ProductsService,
     private route: ActivatedRoute,
-
+    private http : HttpClient,
   ) { }
 
+  setData(data){
+    this.product = data;
+    console.log(this.product); // setear la data a product
+  }
+
   ngOnInit() {
-    this.productSvc.getProducts().pipe(tap((x: Product[]) => ( this.products = x))).subscribe();
-    console.log(this.products, 'desde detalles');
+    //this.productSvc.getProducts().pipe(tap((x: Product[]) => ( this.products = x))).subscribe();
+    //console.log(this.products, 'desde detalles');
+    //const url = `http://localhost:3000/products`
 
     const routeParams = this.route.snapshot.paramMap;
     this.idProduct = Number(routeParams.get('id')); // al asignar id al get, es la variable que le pasa desde el html
-    console.log(this.idProduct, 'Ruta'); //Id que se le pasa desde el HTML
+
+    /*
+    this.productSvc
+    .getProduct(this.idProduct)
+    .pipe(tap(( product: Product[]) => (this.product = product, console.log(product, 'producto'))))
+    .subscribe();
+    */
+    this.productSvc
+    .getProduct(this.idProduct)
+    .subscribe(
+      (response) => {
+        this.setData(response)
+      }
+    )
   }
+
+  dataTest = { name: 'james'}
 }
 
 /*
