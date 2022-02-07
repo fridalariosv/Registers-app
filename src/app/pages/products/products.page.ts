@@ -9,24 +9,33 @@ import { tap } from 'rxjs/operators';
 })
 export class ProductsPage implements OnInit {
   products!: Product[];
+  searchedProduct: any;
 
   constructor(
     private productSvc: ProductsService
   ) { }
 
   ngOnInit(): void {
-    console.log(this.products, 'productos')
+    this.searchedProduct = this.products;
     this.productSvc
     .getProducts()
     .pipe(tap((products: Product[]) => (this.products = products)))
-    //.pipe(tap((products: Product[]) => (console.log(products, 'Data from products.ts'))))
     .subscribe();
-    //console.log(this.productSvc, 'URL????');
   }
 
 
   getTitle(value: string) {
     if (typeof value == "string" && value.length > 30) value = value.substring(0, 30) + "..."
     return value
+  }
+
+  searchProduct(event) {
+    const text = event.target.value;
+    this.searchedProduct = this.products;
+    if (text && text.trim() != '') {
+      this.searchedProduct = this.searchedProduct.filter((product: any) => {
+        return (product.name.toLowerCase().indexOf(text.toLowerCase()) > -1);
+      })
+    }
   }
 }
